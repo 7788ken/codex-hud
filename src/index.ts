@@ -213,7 +213,7 @@ async function collectData(): Promise<HudData> {
 
   // If we have a session, parse the rollout
   let rolloutData = rolloutParser.getCached();
-  if (session && (!rolloutData || configNeedsRefresh)) {
+  if (session) {
     rolloutData = await parseRolloutSafely();
     configNeedsRefresh = false;
   }
